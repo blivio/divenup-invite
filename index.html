@@ -116,26 +116,6 @@
       margin: 0;
     }
 
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin: 22px 0 18px;
-    }
-
-    .other {
-      text-align: left;
-    }
-
-    .other h2 {
-      font-size: 16px;
-      margin: 0 0 6px;
-    }
-
-    .other p {
-      font-size: 13px;
-      margin: 0 0 8px;
-    }
-
     footer {
       margin-top: 22px;
       padding-top: 16px;
@@ -168,13 +148,6 @@
     <a class="open" id="open" href="divenup://">Já tenho o app — abrir</a>
 
     <p class="hint" id="hint">Depois de criar sua conta, envie seu @usuário para quem te convidou.</p>
-
-    <div class="other" id="other" hidden>
-      <div class="divider"></div>
-      <h2 id="other-title"></h2>
-      <p id="other-subtitle"></p>
-      <p class="hint" id="other-hint"></p>
-    </div>
 
     <footer>
       <a href="https://blivio.github.io/divenup-privacy/">Privacidade</a>
@@ -260,19 +233,6 @@
       document.getElementById('ios').textContent = text.ios;
       document.getElementById('open').textContent = text.open;
       document.getElementById('hint').textContent = text.hint;
-
-      // Como na pagina de confirmacao: em PT mostra tambem a versao em
-      // ingles; em EN o texto principal ja e ingles.
-      if (lang === 'pt') {
-        var other = build('en');
-        var otherEl = document.getElementById('other');
-
-        document.getElementById('other-title').textContent = other.title;
-        document.getElementById('other-subtitle').textContent = other.subtitle;
-        document.getElementById('other-hint').textContent = other.hint;
-
-        otherEl.hidden = false;
-      }
 
       // No celular mostra so a loja da plataforma; no desktop, as duas.
       var ua = navigator.userAgent;
